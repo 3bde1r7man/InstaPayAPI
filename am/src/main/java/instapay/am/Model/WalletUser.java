@@ -1,8 +1,10 @@
 package instapay.am.Model;
 
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Entity;
 
-@Component
+
+
+@Entity
 public class WalletUser extends User{
     
 }

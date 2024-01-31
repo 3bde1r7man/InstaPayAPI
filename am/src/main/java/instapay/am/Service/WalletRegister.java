@@ -10,7 +10,7 @@ import instapay.am.Model.WalletUser;
 public class WalletRegister extends Register {
     
     @Override
-    public User register() {
+    public Object register(User user) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'register'");
     }

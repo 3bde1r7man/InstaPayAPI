@@ -1,0 +1,6 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "dataworkspace.excludedProjects": [
+        "db/db.sqlproj"
+    ]
+}

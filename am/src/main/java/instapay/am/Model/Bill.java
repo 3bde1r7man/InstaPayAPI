@@ -1,21 +1,22 @@
 package instapay.am.Model;
 
-import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Component
+@ToString
+@Entity
 public class Bill {
+    @Id
     private String code;
     private String user;
     private BillType billType;
     private double price;
-
-    
 
 }
 

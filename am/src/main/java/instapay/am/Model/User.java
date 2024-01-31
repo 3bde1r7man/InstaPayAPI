@@ -1,25 +1,33 @@
 package instapay.am.Model;
 
-import org.springframework.stereotype.Component;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Component
+@ToString
+@Entity
+@Table(name = "`User`")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected String username;
+    protected String userName;
     protected String password;
     protected String name;
-    protected String surname;
+    protected String surName;
     protected String email;
     protected String phone;
     protected AccType accType;
+
+    // public String getAccType() {
+    //     return accType.toString();
+    // }
+
+    // public void setAccType(String accType) {
+    //     this.accType = AccType.getAccType(accType);
+    // }
 }

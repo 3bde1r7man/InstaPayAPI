@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import instapay.am.Model.User;
 
 public abstract class Register {
-    public abstract User register();
+    public abstract Object register(User user);
     public boolean isStrongPassword(String password) {
         // Password must be at least 8 characters long and contain at least one uppercase letter, 
         // one lowercase letter, one digit, and one special character.
