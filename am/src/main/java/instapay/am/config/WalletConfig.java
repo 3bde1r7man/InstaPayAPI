@@ -11,7 +11,7 @@ import instapay.am.Repository.FakeAPI.WalletAcc;
 
 @Configuration
 public class WalletConfig {
-    @Bean
+    @Bean(name = "walletCommandLineRunner")
     CommandLineRunner commandLineRunner(WalletRepository repository) {
         return args -> {
             WalletAcc wallet1 = new WalletAcc("0987654321", 50000.0);

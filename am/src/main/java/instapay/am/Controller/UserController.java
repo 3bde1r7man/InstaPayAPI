@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import instapay.am.Model.BankUser;
+import instapay.am.Model.WalletUser;
 import instapay.am.Service.UserService;
 import instapay.am.Util.JsonUtil;
 
@@ -28,6 +29,15 @@ public class UserController {
         
         if(user.getUserName() != null){
             return userService.bankRegister(user);
+        }
+        return JsonUtil.error("User is null");
+    }
+
+    @PostMapping("/wallet/register")
+    public Object register(@RequestBody WalletUser user) {
+        
+        if(user.getUserName() != null){
+            return userService.walletRegister(user);
         }
         return JsonUtil.error("User is null");
     }
