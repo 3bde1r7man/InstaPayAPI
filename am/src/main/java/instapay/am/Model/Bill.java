@@ -14,9 +14,10 @@ import lombok.*;
 public class Bill {
     @Id
     private String code;
-    private String user;
+    private String userName;
     private BillType billType;
-    private double price;
+    private BillStatus billStatus;
+    private double amount;
 
 }
 

@@ -20,11 +20,18 @@ public class WalletAPI {
         return walletRepository.findById(bankAccNum).get().getBalance();
     }
 
-    public boolean transfer(String walletAccNum, double amount) {
+    public boolean subtract(String walletAccNum, double amount) {
         if(walletAccNum.length() == 0) return false;
         if(amount < 0) return false;
         if(walletRepository.findById(walletAccNum).get().getBalance() < amount) return false;
         walletRepository.findById(walletAccNum).get().setBalance(walletRepository.findById(walletAccNum).get().getBalance() - amount);
+        return true;
+    }
+
+    public boolean add(String walletAccNum, double amount) {
+        if(walletAccNum.length() == 0) return false;
+        if(amount < 0) return false;
+        walletRepository.findById(walletAccNum).get().setBalance(walletRepository.findById(walletAccNum).get().getBalance() + amount);
         return true;
     }
 }
