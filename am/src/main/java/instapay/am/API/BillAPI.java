@@ -29,4 +29,8 @@ public class BillAPI {
         return billRepository.findById(billCode).get().getAmount();
     }
 
+    public BillStatus getBillStatus(String billCode) {
+        return billRepository.findById(billCode).get().getBillStatus();
+    }
+
 }

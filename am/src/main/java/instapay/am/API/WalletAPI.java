@@ -25,6 +25,7 @@ public class WalletAPI {
         if(amount < 0) return false;
         if(walletRepository.findById(walletAccNum).get().getBalance() < amount) return false;
         walletRepository.findById(walletAccNum).get().setBalance(walletRepository.findById(walletAccNum).get().getBalance() - amount);
+        walletRepository.save(walletRepository.findById(walletAccNum).get());
         return true;
     }
 
@@ -32,6 +33,7 @@ public class WalletAPI {
         if(walletAccNum.length() == 0) return false;
         if(amount < 0) return false;
         walletRepository.findById(walletAccNum).get().setBalance(walletRepository.findById(walletAccNum).get().getBalance() + amount);
+        walletRepository.save(walletRepository.findById(walletAccNum).get());
         return true;
     }
 }

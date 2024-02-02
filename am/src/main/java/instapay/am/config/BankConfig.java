@@ -14,7 +14,7 @@ public class BankConfig {
     @Bean(name = "bankCommandLineRunner")
     CommandLineRunner commandLineRunner(BankRepository repository) {
         return args -> {
-            BankAcc bankAcc1 = new BankAcc("4820", 50000.0);
+            BankAcc bankAcc1 = new BankAcc("1234567890", 50000.0);
             BankAcc bankAcc2 = new BankAcc("0987654321", 2000.0);
             repository.saveAll(
                 List.of(bankAcc1, bankAcc2)
