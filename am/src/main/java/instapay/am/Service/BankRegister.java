@@ -22,7 +22,6 @@ public class BankRegister extends Register{
         if(bankUser.getUserName().length() == 0 || bankUser.getPassword().length() == 0 || bankUser.getPhone().length() == 0 || bankUser.getBankAccNum().length() == 0) return false;
         
         if (userRepository.existsById(bankUser.getUserName())) {
-            
             return JsonUtil.error("Username already exists");
         }
 

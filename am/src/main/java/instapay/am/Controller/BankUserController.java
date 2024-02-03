@@ -30,4 +30,28 @@ public class BankUserController {
         String billCode = body.get("billCode");
         return bankUserService.payBill(userName, billCode);
     }
+
+    @PutMapping("/transfer-wallet")
+    public Object transferWallet(@RequestBody Map<String, String> body) {
+        String sender = body.get("from");
+        String reciver = body.get("to");
+        double amount = Double.parseDouble(body.get("amount"));
+        return bankUserService.transferToWallet(sender, reciver, amount);
+    }
+
+    @PutMapping("/transfer-bank")
+    public Object transferBank(@RequestBody Map<String, String> body) {
+        String sender = body.get("from");
+        String reciver = body.get("to");
+        double amount = Double.parseDouble(body.get("amount"));
+        return bankUserService.transferToBank(sender, reciver, amount);
+    }
+
+    @PutMapping("/transfer")
+    public Object transferInstaPay(@RequestBody Map<String, String> body) {
+        String sender = body.get("from");
+        String reciver = body.get("to");
+        double amount = Double.parseDouble(body.get("amount"));
+        return bankUserService.transferToInstaPay(sender, reciver, amount);
+    }
 }

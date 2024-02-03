@@ -1,12 +1,10 @@
 package instapay.am.Service;
 
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import instapay.am.Repository.BillRepository;
 import instapay.am.Util.JsonUtil;
-import instapay.am.Model.Bill;
 import instapay.am.Model.BillStatus;
 import instapay.am.Model.BillType;
 

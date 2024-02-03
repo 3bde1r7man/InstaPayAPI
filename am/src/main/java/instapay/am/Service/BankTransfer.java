@@ -1,11 +1,15 @@
 package instapay.am.Service;
 
-public class BankTransfer implements BankTransferStrat{
+import org.springframework.beans.factory.annotation.Autowired;
 
+import instapay.am.API.BankAPI;
+
+public class BankTransfer implements BankTransferStrat{
+    @Autowired
+    private BankAPI bankAPI;
     @Override
-    public boolean transfer(String sender, String reciver, double amount) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'transfer'");
+    public boolean transfer(String reciver, double amount) {
+        return bankAPI.add(reciver, amount);
     }
     
 }
