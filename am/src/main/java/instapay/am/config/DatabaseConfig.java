@@ -9,7 +9,7 @@ import javax.sql.DataSource;
 
 @Configuration
 public class DatabaseConfig {
-
+    // create an embedded database 
     @Bean
     public DataSource dataSource() {
         return new EmbeddedDatabaseBuilder()

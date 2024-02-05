@@ -11,6 +11,7 @@ import instapay.am.Repository.FakeAPI.WalletAcc;
 
 @Configuration
 public class WalletConfig {
+    // add wallet accounts to the database
     @Bean(name = "walletCommandLineRunner")
     CommandLineRunner commandLineRunner(WalletRepository repository) {
         return args -> {

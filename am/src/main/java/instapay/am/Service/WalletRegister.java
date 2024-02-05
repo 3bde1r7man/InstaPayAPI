@@ -15,7 +15,7 @@ public class WalletRegister extends Register {
     private UserRepository userRepository;
     @Autowired
     private WalletAPI walletAPI;
-
+    // register wallet user
     @Override
     public Object register(User user) {
         WalletUser walletUser = (WalletUser) user;

@@ -11,6 +11,7 @@ import instapay.am.Repository.FakeAPI.BankAcc;
 
 @Configuration
 public class BankConfig {
+    // add bank accounts to the database
     @Bean(name = "bankCommandLineRunner")
     CommandLineRunner commandLineRunner(BankRepository repository) {
         return args -> {

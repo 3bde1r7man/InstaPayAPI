@@ -18,19 +18,19 @@ public class WalletUserController {
     @Autowired
     private WalletUserService walletUserService;
 
-
+    // get account balance
     @GetMapping("/inquire/{userName}")
     public Object inquire(@PathVariable String userName) {
         return walletUserService.inquireBalance(userName);
     }
-
+    // pay bill with userName and billCode
     @PutMapping("/pay_bill")
     public Object payBill(@RequestBody Map<String, String> body) {
         String userName = body.get("userName");
         String billCode = body.get("billCode");
         return walletUserService.payBill(userName, billCode);
     }
-
+    // transfer money from wallet to wallet
     @PutMapping("/transfer-wallet")
     public Object transferWallet(@RequestBody Map<String, String> body) {
         String sender = body.get("from");
@@ -38,7 +38,7 @@ public class WalletUserController {
         double amount = Double.parseDouble(body.get("amount"));
         return walletUserService.transferToWallet(sender, reciver, amount);
     }
-
+    // transfer money from wallet to instapay
     @PutMapping("/transfer")
     public Object transferInstaPay(@RequestBody Map<String, String> body) {
         String sender = body.get("from");
@@ -46,7 +46,4 @@ public class WalletUserController {
         double amount = Double.parseDouble(body.get("amount"));
         return walletUserService.transferToInstaPay(sender, reciver, amount);
     }
-
-
-    
 }

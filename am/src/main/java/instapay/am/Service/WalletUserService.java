@@ -21,13 +21,13 @@ public class WalletUserService {
     private InstaPayTransfer instaPayTransfer;
     @Autowired
     private UserRepository userRepository;
-
+    // get account balance
     public Object inquireBalance(String userName) {
         if(userName.length() == 0) return JsonUtil.error("Invalid Username");
         if(!userRepository.existsById(userName)) return JsonUtil.error("Username does not exist");
         return JsonUtil.success(Double.toString(walletAPI.accountBalance(userRepository.findById(userName).get().getPhone())));
     }
-
+    // pay bill
     public Object payBill(String userName, String billCode) {
         if(userName.length() == 0 || billCode.length() == 0) return JsonUtil.error("Invalid Username or Bill Code");
         if(!userRepository.existsById(userName)) return JsonUtil.error("Username does not exist");
@@ -37,21 +37,21 @@ public class WalletUserService {
         if(!walletAPI.subtract(userRepository.findById(userName).get().getPhone(), billAPI.getBillAmount(billCode))) return JsonUtil.error("Insufficient Balance");
         return JsonUtil.success("Bill Paid Successfully");
     }
-
+    // add amount to account balance
     public boolean addBalance(String userName, double amount) {
         if(userName.length() == 0 || amount <= 0) return false;
         if(!userRepository.existsById(userName)) return false;
         if(!walletAPI.add(userRepository.findById(userName).get().getPhone(), amount)) return false;
         return true;
     }
-
+    // subtract amount from account balance
     public boolean subtractBalance(String userName, double amount) {
         if(userName.length() == 0 || amount <= 0) return false;
         if(!userRepository.existsById(userName)) return false;
         if(!walletAPI.subtract(userRepository.findById(userName).get().getPhone(), amount)) return false;
         return true;
     }
-
+    // transfer amount to wallet
     public Object transferToWallet(String from, String to, double amount){
         if(from.length() == 0 || to.length() == 0 || amount <= 0) return JsonUtil.error("Invalid Username or Amount");
         if(!userRepository.existsById(from)) return JsonUtil.error("Username does not exist");

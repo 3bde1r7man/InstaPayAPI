@@ -15,22 +15,22 @@ import instapay.am.Model.BillType;
 public class BillController {
     @Autowired
     private BillService billService;
-
+    // get all bills
     @GetMapping("")
     public Object getBills(){
         return billService.getAllBills();
     }
-
+    // get bills by userName
     @GetMapping("/{userName}")
     public Object getBillsByUserName(@PathVariable String userName){
         return billService.getBillsByUserName(userName);
     }
-
+    // get bills by userName and type
     @GetMapping("/{userName}/{type}")
     public Object getBillsByType(@PathVariable String userName, @PathVariable String type){
         return billService.getBillsByUserNameAndType(userName, BillType.valueOf(type));
     }
-
+    // get unpaied bills by userName and type
     @GetMapping("/unpaied/{userName}/{type}")
     public Object getUnpaiedBillsByType(@PathVariable String userName, @PathVariable String type){
         return billService.getBillsByUserNameAndBillTypeAndBillStatus(userName, BillType.valueOf(type));

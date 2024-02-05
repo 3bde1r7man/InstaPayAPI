@@ -10,24 +10,6 @@
 			"name": "Register",
 			"item": [
 				{
-					"name": "Register page",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/instapay/register",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"instapay",
-								"register"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Bank Register",
 					"request": {
 						"method": "POST",

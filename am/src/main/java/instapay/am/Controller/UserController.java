@@ -19,21 +19,15 @@ import instapay.am.Util.JsonUtil;
 public class UserController {
     @Autowired
     private UserService userService;
-
-    @GetMapping("/register")
-    public Object login() {
-        return JsonUtil.success("Login");
-    }
-
+    // register bank user
     @PostMapping("/bank/register")
     public Object register(@RequestBody BankUser user) {
-        
         if(user.getUserName() != null){
             return userService.bankRegister(user);
         }
         return JsonUtil.error("User is null");
     }
-
+    // register wallet user
     @PostMapping("/wallet/register")
     public Object register(@RequestBody WalletUser user) {
         
@@ -42,13 +36,13 @@ public class UserController {
         }
         return JsonUtil.error("User is null");
     }
-
+    // get all users
     @GetMapping("")
     public Object getUsers(){
         return userService.getUsers();
     }
 
-
+    // get user by userName
     @GetMapping("/{userName}")
     public Object getUser(@PathVariable String userName){
         return userService.getUser(userName);

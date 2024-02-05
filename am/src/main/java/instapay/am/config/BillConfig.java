@@ -13,6 +13,7 @@ import instapay.am.Repository.BillRepository;
 
 @Configuration
 public class BillConfig {
+    // add bills to the database
     @Bean(name = "BillCommandLineRunner")
     public CommandLineRunner commandLineRunner(BillRepository repository) {
         return args -> {

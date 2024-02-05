@@ -16,6 +16,7 @@ public class BankRegister extends Register{
     private UserRepository userRepository;
     @Autowired
     private BankAPI bankAPI;
+    // register bank user
     @Override
     public Object register(User user) {
         BankUser bankUser = (BankUser) user;

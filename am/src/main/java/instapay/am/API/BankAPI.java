@@ -9,14 +9,17 @@ import instapay.am.Repository.BankRepository;
 public class BankAPI {
     @Autowired
     private BankRepository bankRepository;
+    // validate bank account number
     public boolean validBankACC(String bankAccNum) {
         if(bankAccNum.length() == 0) return false;
         return bankRepository.existsById(bankAccNum);
     }
+    // get account balance
     public double accountBalance(String bankAccNum) {
         if(bankAccNum.length() == 0) return -1.0;
         return bankRepository.findById(bankAccNum).get().getBalance();
     }
+    // subtract amount from account balance
     public boolean subtract(String bankAccNum, double amount) {
         if(bankAccNum.length() == 0) return false;
         if(amount < 0) return false;
@@ -25,7 +28,7 @@ public class BankAPI {
         bankRepository.save(bankRepository.findById(bankAccNum).get());
         return true;
     }
-
+    // add amount to account balance
     public boolean add(String bankAccNum, double amount) {
         if(bankAccNum.length() == 0) return false;
         if(amount < 0) return false;

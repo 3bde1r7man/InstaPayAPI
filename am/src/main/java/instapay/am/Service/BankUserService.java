@@ -23,14 +23,14 @@ public class BankUserService {
     @Autowired
     WalletTransfer walletTransfer;
 
-
+    // get account balance
     public Object inquireBalance(String userName) {
         if(userName.length() == 0) return JsonUtil.error("Invalid Username");
         if(!userRepository.existsById(userName)) return JsonUtil.error("Username does not exist");
         BankUser bankUser = (BankUser) userRepository.findById(userName).get();
         return JsonUtil.success(Double.toString(bankAPI.accountBalance(bankUser.getBankAccNum())));
     }
-
+    // pay bill
     public Object payBill(String userName, String billCode) {
         if(userName.length() == 0 || billCode.length() == 0) return JsonUtil.error("Invalid Username or Bill Code");
         if(!userRepository.existsById(userName)) return JsonUtil.error("Username does not exist");
@@ -41,7 +41,7 @@ public class BankUserService {
         if(!bankAPI.subtract(bankUser.getBankAccNum(), billAPI.getBillAmount(billCode))) return JsonUtil.error("Insufficient Balance");
         return JsonUtil.success("Bill Paid Successfully");
     }
-
+    // add amount to account balance
     public boolean addBalance(String userName, double amount) {
         if(userName.length() == 0 || amount <= 0) return false;
         if(!userRepository.existsById(userName)) return false;
@@ -49,7 +49,7 @@ public class BankUserService {
         if(!bankAPI.add(bankUser.getBankAccNum(), amount)) return false;
         return true;
     }
-
+    // subtract amount from account balance
     public boolean subtractBalance(String userName, double amount) {
         if(userName.length() == 0 || amount <= 0) return false;
         if(!userRepository.existsById(userName)) return false;
@@ -58,7 +58,7 @@ public class BankUserService {
         return true;
     }
 
-    
+    // transfer amount to wallet
     public Object transferToWallet(String userName, String walletAccNum, double amount) {
         if(userName.length() == 0 || amount <= 0 || walletAccNum.length() == 0) return JsonUtil.error("Invalid Username or Amount or Wallet Account Number");
         if(!userRepository.existsById(userName)) return JsonUtil.error("Username does not exist");
@@ -70,7 +70,7 @@ public class BankUserService {
         }
         return JsonUtil.success("Transfer Successfully");
     }
-    
+    // transfer amount to bank
     public Object transferToBank(String userName, String bankAccNum, double amount) {
         if(userName.length() == 0 || amount <= 0 || bankAccNum.length() == 0) return JsonUtil.error("Invalid Username or Amount or Bank Account Number");
         if(!userRepository.existsById(userName)) return JsonUtil.error("Username does not exist");
@@ -83,7 +83,7 @@ public class BankUserService {
         }
         return JsonUtil.success("Balance transferred successfully");
     }
-
+    // transfer amount to instapay
     public Object transferToInstaPay(String from, String to, double amount) {
         
         if(from.length() == 0 || to.length() == 0 || amount <= 0) return JsonUtil.error("Invalid Username or Amount");
