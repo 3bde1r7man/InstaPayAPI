@@ -29,4 +29,10 @@ public class UserService {
     public Object getUsers() {
         return userRepository.findAll();
     }
+
+    public Object getUser(String userName) {
+        if(userName.length() == 0) return "Invalid Username";
+        if(!userRepository.existsById(userName)) return "Username does not exist";
+        return userRepository.findById(userName).get();
+    }
 }

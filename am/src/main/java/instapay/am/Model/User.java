@@ -1,6 +1,8 @@
 package instapay.am.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -23,11 +25,4 @@ public class User {
     protected String phone;
     protected AccType accType;
 
-    // public String getAccType() {
-    //     return accType.toString();
-    // }
-
-    // public void setAccType(String accType) {
-    //     this.accType = AccType.getAccType(accType);
-    // }
 }
