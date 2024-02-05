@@ -55,6 +55,7 @@ public class WalletUserService {
     public Object transferToWallet(String from, String to, double amount){
         if(from.length() == 0 || to.length() == 0 || amount <= 0) return JsonUtil.error("Invalid Username or Amount");
         if(!userRepository.existsById(from)) return JsonUtil.error("Username does not exist");
+        if(userRepository.findById(from).get().getAccType().toString().equals("Bank")) return JsonUtil.error("invalid transfer type");
         if(userRepository.findById(from).get().getPhone().equals(to)) return JsonUtil.error("Cannot Transfer to urself");
         if(!walletAPI.subtract(userRepository.findById(from).get().getPhone(), amount)) return JsonUtil.error("Insufficient Balance");
         if(!walletAPI.add(to, amount)) {
@@ -64,11 +65,12 @@ public class WalletUserService {
         return JsonUtil.success("Transfer Successful");
     }
 
-    
+
     
     public Object transferToInstaPay(String from, String to, double amount) {
         if(from.length() == 0 || to.length() == 0 || amount <= 0) return JsonUtil.error("Invalid Username or Amount");
         if(!userRepository.existsById(from) || !userRepository.existsById(to)) return JsonUtil.error("Username does not exist");
+        if(userRepository.findById(from).get().getAccType().toString().equals("Bank")) return JsonUtil.error("invalid transfer type");
         if(from.equals(to)) return JsonUtil.error("Cannot Transfer to urself");
         if(!walletAPI.subtract(userRepository.findById(from).get().getPhone(), amount)) return JsonUtil.error("Insufficient Balance");
         if(!instaPayTransfer.transfer(to, amount)) {
