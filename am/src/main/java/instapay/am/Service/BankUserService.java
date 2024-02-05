@@ -75,6 +75,7 @@ public class BankUserService {
         if(userName.length() == 0 || amount <= 0 || bankAccNum.length() == 0) return JsonUtil.error("Invalid Username or Amount or Bank Account Number");
         if(!userRepository.existsById(userName)) return JsonUtil.error("Username does not exist");
         BankUser bankUser = (BankUser) userRepository.findById(userName).get();
+        if(bankUser.getBankAccNum().equals(bankAccNum)) return JsonUtil.error("Cannot Transfer to urself");
         if(!bankAPI.subtract(bankUser.getBankAccNum(), amount)) return JsonUtil.error("Insufficient Balance");
         if(!bankAPI.add(bankAccNum, amount)) {
             bankAPI.add(bankUser.getBankAccNum(), amount);
@@ -87,6 +88,7 @@ public class BankUserService {
         
         if(from.length() == 0 || to.length() == 0 || amount <= 0) return JsonUtil.error("Invalid Username or Amount");
         if(!userRepository.existsById(from) || !userRepository.existsById(to)) return JsonUtil.error("Username does not exist");
+        if(from.equals(to)) return JsonUtil.error("Cannot Transfer to urself");
         BankUser bankUser = (BankUser) userRepository.findById(from).get();
         if(!bankAPI.subtract(bankUser.getBankAccNum(), amount)) return JsonUtil.error("Insufficient Balance");
         if(!instaPayTransfer.transfer(to, amount)) {

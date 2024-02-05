@@ -15,9 +15,9 @@ public class WalletAPI {
         return walletRepository.existsById(walletAccNum);
     }
 
-    public double accountBalance(String bankAccNum) {
-        if(bankAccNum.length() == 0) return -1.0;
-        return walletRepository.findById(bankAccNum).get().getBalance();
+    public double accountBalance(String AccNum) {
+        if(AccNum.length() == 0) return -1.0;
+        return walletRepository.findById(AccNum).get().getBalance();
     }
 
     public boolean subtract(String walletAccNum, double amount) {

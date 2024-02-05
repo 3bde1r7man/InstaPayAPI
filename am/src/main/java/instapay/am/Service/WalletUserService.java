@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import instapay.am.API.BillAPI;
 import instapay.am.API.WalletAPI;
+
 import instapay.am.Model.BillStatus;
 import instapay.am.Repository.UserRepository;
 import instapay.am.Util.JsonUtil;
@@ -16,6 +17,8 @@ public class WalletUserService {
     private WalletAPI walletAPI;
     @Autowired
     private BillAPI billAPI;
+    @Autowired
+    private InstaPayTransfer instaPayTransfer;
     @Autowired
     private UserRepository userRepository;
 
@@ -49,12 +52,29 @@ public class WalletUserService {
         return true;
     }
 
-    public Object transferToWallet( String from, String to, double amount){
+    public Object transferToWallet(String from, String to, double amount){
         if(from.length() == 0 || to.length() == 0 || amount <= 0) return JsonUtil.error("Invalid Username or Amount");
-        if(!userRepository.existsById(from) || !userRepository.existsById(to)) return JsonUtil.error("Username does not exist");
+        if(!userRepository.existsById(from)) return JsonUtil.error("Username does not exist");
+        if(userRepository.findById(from).get().getPhone().equals(to)) return JsonUtil.error("Cannot Transfer to urself");
         if(!walletAPI.subtract(userRepository.findById(from).get().getPhone(), amount)) return JsonUtil.error("Insufficient Balance");
-        if(!walletAPI.add(userRepository.findById(to).get().getPhone(), amount)) return JsonUtil.error("Transfer Failed");
+        if(!walletAPI.add(to, amount)) {
+            walletAPI.add(userRepository.findById(from).get().getPhone(), amount);
+            return JsonUtil.error("Transfer Failed");
+        }
         return JsonUtil.success("Transfer Successful");
     }
+
     
+    
+    public Object transferToInstaPay(String from, String to, double amount) {
+        if(from.length() == 0 || to.length() == 0 || amount <= 0) return JsonUtil.error("Invalid Username or Amount");
+        if(!userRepository.existsById(from) || !userRepository.existsById(to)) return JsonUtil.error("Username does not exist");
+        if(from.equals(to)) return JsonUtil.error("Cannot Transfer to urself");
+        if(!walletAPI.subtract(userRepository.findById(from).get().getPhone(), amount)) return JsonUtil.error("Insufficient Balance");
+        if(!instaPayTransfer.transfer(to, amount)) {
+            walletAPI.add(userRepository.findById(from).get().getPhone(), amount);
+            return JsonUtil.error("Transfer Failed");
+        }
+        return JsonUtil.success("Transfer Successfully");
+    }
 }

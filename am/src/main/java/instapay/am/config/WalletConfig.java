@@ -14,7 +14,7 @@ public class WalletConfig {
     @Bean(name = "walletCommandLineRunner")
     CommandLineRunner commandLineRunner(WalletRepository repository) {
         return args -> {
-            WalletAcc wallet1 = new WalletAcc("0987654321", 50000.0);
+            WalletAcc wallet1 = new WalletAcc("01111111111", 50000.0);
             WalletAcc wallet2 = new WalletAcc("01143022394", 55000.0);
             repository.saveAll(
                 List.of(wallet1, wallet2)
