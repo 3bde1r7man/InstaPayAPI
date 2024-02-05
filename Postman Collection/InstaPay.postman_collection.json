@@ -938,14 +938,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/instapay/bank/transfer-wallet",
+							"raw": "{{base_url}}/instapay/bank/transfer",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"instapay",
 								"bank",
-								"transfer-wallet"
+								"transfer"
 							]
 						}
 					},
