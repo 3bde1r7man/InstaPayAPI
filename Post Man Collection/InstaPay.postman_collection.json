@@ -1,0 +1,1751 @@
+{
+	"info": {
+		"_postman_id": "46e6fa02-658f-46e3-a374-3deb26613ed5",
+		"name": "InstaPay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31618884"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"item": [
+				{
+					"name": "Register page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/instapay/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bank Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"3bde1r7man\",\r\n    \"password\" : \"@Abc1234\",\r\n    \"name\" : \"Abdelrhman\",\r\n    \"surName\" : \"Mostafa\",\r\n    \"email\" : \"abdo@gmail.com\",\r\n    \"phone\" : \"01143022394\",\r\n    \"accType\" : \"BANK\",\r\n    \"bankAccNum\" : \"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/instapay/bank/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"bank",
+								"register"
+							]
+						},
+						"description": "# Instapay Bank Registration\n\nThis API endpoint allows you to register a bank account with Instapay.\n\n## Request\n\n- Method: POST\n- Endpoint: `{{base_url}}/instapay/bank/register`\n- Headers:\n    - Content-Type: application/json\n- Body (raw, JSON):\n    - `userName` (string): The username for the bank account\n    - `password` (string): The password for the bank account\n    - `name` (string): The first name of the account holder\n    - `surName` (string): The last name of the account holder\n    - `email` (string): The email address of the account holder\n    - `phone` (string): The phone number of the account holder\n    - `accType` (string): The type of the bank account\n    - `bankAccNum` (string): The bank account number\n\n## Response\n\n- Status: 200\n- Content-Type: application/json\n- Body:\n    - `Status` (string): The status of the registration request\n    - `message` (string): A message regarding the registration status\n\n### Example Response\n\n``` json\n{\n    \"Status\": \"example_status\",\n    \"message\": \"example_message\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"3bde1r7man\",\r\n    \"password\" : \"@Abc1234\",\r\n    \"name\" : \"Abdelrhman\",\r\n    \"surName\" : \"Mostafa\",\r\n    \"email\" : \"abdo@gmail.com\",\r\n    \"phone\" : \"01143022394\",\r\n    \"accType\" : \"BANK\",\r\n    \"bankAccNum\" : \"4820\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/instapay/bank/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"bank",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 20:58:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Success\",\n    \"message\": \"Bank User Registered Successfully\"\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"3bde1r7man\",\r\n    \"password\" : \"@Abc1234\",\r\n    \"name\" : \"Abdelrhman\",\r\n    \"surName\" : \"Mostafa\",\r\n    \"email\" : \"abdo@gmail.com\",\r\n    \"phone\" : \"01143022394\",\r\n    \"accType\" : \"BANK\",\r\n    \"bankAccNum\" : \"4820\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/instapay/bank/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"bank",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 20:58:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Error\",\n    \"message\": \"Username already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Bank Register Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"2hm3d\",\r\n    \"password\" : \"@Abc1234\",\r\n    \"name\" : \"Ahmed\",\r\n    \"surName\" : \"Hanfy\",\r\n    \"email\" : \"ahmed@gmail.com\",\r\n    \"phone\" : \"01143022394\",\r\n    \"accType\" : \"BANK\",\r\n    \"bankAccNum\" : \"0987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/instapay/bank/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"bank",
+								"register"
+							]
+						},
+						"description": "# Instapay Bank Registration\n\nThis API endpoint allows you to register a bank account with Instapay.\n\n## Request\n\n- Method: POST\n- Endpoint: `{{base_url}}/instapay/bank/register`\n- Headers:\n    - Content-Type: application/json\n- Body (raw, JSON):\n    - `userName` (string): The username for the bank account\n    - `password` (string): The password for the bank account\n    - `name` (string): The first name of the account holder\n    - `surName` (string): The last name of the account holder\n    - `email` (string): The email address of the account holder\n    - `phone` (string): The phone number of the account holder\n    - `accType` (string): The type of the bank account\n    - `bankAccNum` (string): The bank account number\n\n## Response\n\n- Status: 200\n- Content-Type: application/json\n- Body:\n    - `Status` (string): The status of the registration request\n    - `message` (string): A message regarding the registration status\n\n### Example Response\n\n``` json\n{\n    \"Status\": \"example_status\",\n    \"message\": \"example_message\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"3bde1r7man\",\r\n    \"password\" : \"@Abc1234\",\r\n    \"name\" : \"Abdelrhman\",\r\n    \"surName\" : \"Mostafa\",\r\n    \"email\" : \"abdo@gmail.com\",\r\n    \"phone\" : \"01143022394\",\r\n    \"accType\" : \"BANK\",\r\n    \"bankAccNum\" : \"4820\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/instapay/bank/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"bank",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 20:58:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Success\",\n    \"message\": \"Bank User Registered Successfully\"\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"3bde1r7man\",\r\n    \"password\" : \"@Abc1234\",\r\n    \"name\" : \"Abdelrhman\",\r\n    \"surName\" : \"Mostafa\",\r\n    \"email\" : \"abdo@gmail.com\",\r\n    \"phone\" : \"01143022394\",\r\n    \"accType\" : \"BANK\",\r\n    \"bankAccNum\" : \"4820\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/instapay/bank/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"bank",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 20:58:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Error\",\n    \"message\": \"Username already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Wallet Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Status</th>\r",
+									"        <th>Message</th>\r",
+									"    </tr>\r",
+									"    <tr>\r",
+									"        <td>{{response.Status}}</td>\r",
+									"        <td>{{response.message}}</td>\r",
+									"    </tr>\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return { response: pm.response.json() }\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"2hm3d\",\r\n    \"password\" : \"@Abc1234\",\r\n    \"name\" : \"Ahmed\",\r\n    \"surName\" : \"Hanfy\",\r\n    \"email\" : \"ahmed@gmail.com\",\r\n    \"phone\" : \"01111111111\",\r\n    \"accType\" : \"WALLET\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/instapay/wallet/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"wallet",
+								"register"
+							]
+						},
+						"description": "This API endpoint allows you to register a new wallet for Instapay.\n\n### Request Body\n\n- **userName** (text, required): The username for the wallet registration.\n- **password** (text, required): The password for the wallet registration.\n- **name** (text, required): The first name of the user.\n- **surName** (text, required): The last name of the user.\n- **email** (text, required): The email address of the user.\n- **phone** (text, required): The phone number of the user.\n- **accType** (text, required): The account type for the wallet registration.\n    \n\n### Response\n\n- **Status** (string): The status of the registration process.\n- **message** (string): A message regarding the registration status.\n    \n\n#### Example Response\n\n```\n{\n    \"Status\": \"\",\n    \"message\": \"\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"2hm3d\",\r\n    \"password\" : \"@Abc1234\",\r\n    \"name\" : \"Ahmed\",\r\n    \"surName\" : \"Hanfy\",\r\n    \"email\" : \"ahmed@gmail.com\",\r\n    \"phone\" : \"01143022394\",\r\n    \"accType\" : \"WALLET\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/instapay/wallet/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"wallet",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Feb 2024 17:33:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Success\",\n    \"message\": \"Wallet User Registered Successfully\"\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"2hm3d\",\r\n    \"password\" : \"@Abc1234\",\r\n    \"name\" : \"Ahmed\",\r\n    \"surName\" : \"Hanfy\",\r\n    \"email\" : \"ahmed@gmail.com\",\r\n    \"phone\" : \"01143022394\",\r\n    \"accType\" : \"WALLET\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/instapay/wallet/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"wallet",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Feb 2024 17:34:06 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Error\",\n    \"message\": \"Username already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Wallet Register Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"3bde1r7man\",\r\n    \"password\" : \"@Abc1234\",\r\n    \"name\" : \"Abdelrhman\",\r\n    \"surName\" : \"Mostafa\",\r\n    \"email\" : \"abdo@gmail.com\",\r\n    \"phone\" : \"01143022394\",\r\n    \"accType\" : \"WALLET\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/instapay/wallet/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"wallet",
+								"register"
+							]
+						},
+						"description": "# Instapay Bank Registration\n\nThis API endpoint allows you to register a bank account with Instapay.\n\n## Request\n\n- Method: POST\n- Endpoint: `{{base_url}}/instapay/bank/register`\n- Headers:\n    - Content-Type: application/json\n- Body (raw, JSON):\n    - `userName` (string): The username for the bank account\n    - `password` (string): The password for the bank account\n    - `name` (string): The first name of the account holder\n    - `surName` (string): The last name of the account holder\n    - `email` (string): The email address of the account holder\n    - `phone` (string): The phone number of the account holder\n    - `accType` (string): The type of the bank account\n    - `bankAccNum` (string): The bank account number\n\n## Response\n\n- Status: 200\n- Content-Type: application/json\n- Body:\n    - `Status` (string): The status of the registration request\n    - `message` (string): A message regarding the registration status\n\n### Example Response\n\n``` json\n{\n    \"Status\": \"example_status\",\n    \"message\": \"example_message\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"3bde1r7man\",\r\n    \"password\" : \"@Abc1234\",\r\n    \"name\" : \"Abdelrhman\",\r\n    \"surName\" : \"Mostafa\",\r\n    \"email\" : \"abdo@gmail.com\",\r\n    \"phone\" : \"01143022394\",\r\n    \"accType\" : \"BANK\",\r\n    \"bankAccNum\" : \"4820\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/instapay/bank/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"bank",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 20:58:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Success\",\n    \"message\": \"Bank User Registered Successfully\"\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"3bde1r7man\",\r\n    \"password\" : \"@Abc1234\",\r\n    \"name\" : \"Abdelrhman\",\r\n    \"surName\" : \"Mostafa\",\r\n    \"email\" : \"abdo@gmail.com\",\r\n    \"phone\" : \"01143022394\",\r\n    \"accType\" : \"BANK\",\r\n    \"bankAccNum\" : \"4820\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/instapay/bank/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"bank",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 20:58:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Error\",\n    \"message\": \"Username already exists\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Bank User",
+			"item": [
+				{
+					"name": "Inquire",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/instapay/bank/inquire/3bde1r7man",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"bank",
+								"inquire",
+								"3bde1r7man"
+							]
+						},
+						"description": "This API endpoint sends an HTTP GET request to inquire about a specific bank with the given ID. The response will be in JSON format with a status code of 200. The response body will contain the status and message related to the inquiry.\n\n### Response\n\n- Status (string): Represents the status of the inquiry.\n- Message (string): Provides additional information or messages related to the inquiry.\n    \n\n#### Example Response\n\n``` json\n{\n    \"Status\": \"\",\n    \"message\": \"\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/instapay/bank/inquire/3bde1r7man",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"bank",
+										"inquire",
+										"3bde1r7man"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 21:14:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Success\",\n    \"message\": \"50000.0\"\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/instapay/bank/inquire/3bde1r7man1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"bank",
+										"inquire",
+										"3bde1r7man1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 21:17:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Error\",\n    \"message\": \"Username does not exist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Inquire Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/instapay/bank/inquire/2hm3d",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"bank",
+								"inquire",
+								"2hm3d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/instapay/bank/inquire/3bde1r7man",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"bank",
+										"inquire",
+										"3bde1r7man"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 21:14:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Success\",\n    \"message\": \"50000.0\"\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/instapay/bank/inquire/3bde1r7man1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"bank",
+										"inquire",
+										"3bde1r7man1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 Jan 2024 21:17:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Error\",\n    \"message\": \"Username does not exist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "pay bill",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"3bde1r7man\",\r\n    \"billCode\" : \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/instapay/bank/pay_bill",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"bank",
+								"pay_bill"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer to bank",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\" : \"3bde1r7man\",\r\n    \"to\" : \"0987654321\",\r\n    \"amount\" : 500.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/instapay/bank/transfer-bank",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"bank",
+								"transfer-bank"
+							]
+						},
+						"description": "This HTTP PUT request is used to transfer funds from one bank account to another via the Instapay service. The request should include the sender's account ID (\"from\"), the recipient's account ID (\"to\"), and the amount to be transferred (\"amount\").\n\n### Request Body\n\n- from (string): The account ID of the sender.\n- to (string): The account ID of the recipient.\n- amount (number): The amount to be transferred.\n    \n\n### Response\n\nUpon successful execution, the API returns a 200 status with a JSON response containing the following fields:\n\n- Status (string): Indicates the status of the transfer.\n- message (string): Provides additional information about the transfer.\n    \n\nExample Response:\n\n``` json\n{\n    \"Status\": \"success\",\n    \"message\": \"Transfer completed successfully\"\n}\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer to wallet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\" : \"3bde1r7man\",\r\n    \"to\" : \"01143022394\",\r\n    \"amount\" : 500.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/instapay/bank/transfer-wallet",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"bank",
+								"transfer-wallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer to instapay",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\" : \"3bde1r7man\",\r\n    \"to\" : \"2hm3d\",\r\n    \"amount\" : 500.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/instapay/bank/transfer-wallet",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"bank",
+								"transfer-wallet"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wallet User",
+			"item": [
+				{
+					"name": "Inquire",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/instapay/wallet/inquire/2hm3d",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"wallet",
+								"inquire",
+								"2hm3d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/instapay/wallet/inquire/2hm3d",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"wallet",
+										"inquire",
+										"2hm3d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Feb 2024 17:39:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Success\",\n    \"message\": \"55000.0\"\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/instapay/wallet/inquire/2hm3d3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"wallet",
+										"inquire",
+										"2hm3d3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Feb 2024 17:40:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Error\",\n    \"message\": \"Username does not exist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Inquire Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/instapay/wallet/inquire/3bde1r7man",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"wallet",
+								"inquire",
+								"3bde1r7man"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/instapay/wallet/inquire/2hm3d",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"wallet",
+										"inquire",
+										"2hm3d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Feb 2024 17:39:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Success\",\n    \"message\": \"55000.0\"\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/instapay/wallet/inquire/2hm3d3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"instapay",
+										"wallet",
+										"inquire",
+										"2hm3d3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Feb 2024 17:40:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Status\": \"Error\",\n    \"message\": \"Username does not exist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "pay bill",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"2hm3d\",\r\n    \"billCode\" : \"126\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/instapay/wallet/pay_bill",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"wallet",
+								"pay_bill"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer to wallet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\" : \"3bde1r7man\",\r\n    \"to\" : \"01111111111\",\r\n    \"amount\" : 500.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/instapay/wallet/transfer-wallet",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"wallet",
+								"transfer-wallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer to instapay",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\" : \"3bde1r7man\",\r\n    \"to\" : \"2hm3d\",\r\n    \"amount\" : 500.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/instapay/wallet/transfer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"wallet",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bill",
+			"item": [
+				{
+					"name": "Bills",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Code</th>\r",
+									"        <th>User Name</th>\r",
+									"        <th>Bill Type</th>\r",
+									"        <th>Bill Status</th>\r",
+									"        <th>Amount</th>\r",
+									"    </tr>\r",
+									"    \r",
+									"    {{#each response}}\r",
+									"        <tr>\r",
+									"            <td>{{code}}</td>\r",
+									"            <td>{{userName}}</td>\r",
+									"            <td>{{billType}}</td>\r",
+									"            <td>{{billStatus}}</td>\r",
+									"            <td>{{amount}}</td>\r",
+									"        </tr>\r",
+									"    {{/each}}\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return {response: pm.response.json()}\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/instapay/bill",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"bill"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bills By User Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Code</th>\r",
+									"        <th>User Name</th>\r",
+									"        <th>Bill Type</th>\r",
+									"        <th>Bill Status</th>\r",
+									"        <th>Amount</th>\r",
+									"    </tr>\r",
+									"    \r",
+									"    {{#each response}}\r",
+									"        <tr>\r",
+									"            <td>{{code}}</td>\r",
+									"            <td>{{userName}}</td>\r",
+									"            <td>{{billType}}</td>\r",
+									"            <td>{{billStatus}}</td>\r",
+									"            <td>{{amount}}</td>\r",
+									"        </tr>\r",
+									"    {{/each}}\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return {response: pm.response.json()}\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/instapay/bill/3bde1r7man",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"bill",
+								"3bde1r7man"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bills By User Name & Type",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Code</th>\r",
+									"        <th>User Name</th>\r",
+									"        <th>Bill Type</th>\r",
+									"        <th>Bill Status</th>\r",
+									"        <th>Amount</th>\r",
+									"    </tr>\r",
+									"    \r",
+									"    {{#each response}}\r",
+									"        <tr>\r",
+									"            <td>{{code}}</td>\r",
+									"            <td>{{userName}}</td>\r",
+									"            <td>{{billType}}</td>\r",
+									"            <td>{{billStatus}}</td>\r",
+									"            <td>{{amount}}</td>\r",
+									"        </tr>\r",
+									"    {{/each}}\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return {response: pm.response.json()}\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/instapay/bill/3bde1r7man/WATER",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"bill",
+								"3bde1r7man",
+								"WATER"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unpaied Bills",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Code</th>\r",
+									"        <th>User Name</th>\r",
+									"        <th>Bill Type</th>\r",
+									"        <th>Bill Status</th>\r",
+									"        <th>Amount</th>\r",
+									"    </tr>\r",
+									"    \r",
+									"    {{#each response}}\r",
+									"        <tr>\r",
+									"            <td>{{code}}</td>\r",
+									"            <td>{{userName}}</td>\r",
+									"            <td>{{billType}}</td>\r",
+									"            <td>{{billStatus}}</td>\r",
+									"            <td>{{amount}}</td>\r",
+									"        </tr>\r",
+									"    {{/each}}\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return {response: pm.response.json()}\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/instapay/bill/unpaied/3bde1r7man/GAS",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instapay",
+								"bill",
+								"unpaied",
+								"3bde1r7man",
+								"GAS"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "getUsers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>User Name</th>\r",
+							"        <th>Password</th>\r",
+							"        <th>Name</th>\r",
+							"        <th>Surname</th>\r",
+							"        <th>Email</th>\r",
+							"        <th>Phone</th>\r",
+							"        <th>Account Type</th>\r",
+							"        <th>Bank Account Number</th>\r",
+							"    </tr>\r",
+							"    \r",
+							"    {{#each response}}\r",
+							"        <tr>\r",
+							"            <td>{{userName}}</td>\r",
+							"            <td>{{password}}</td>\r",
+							"            <td>{{name}}</td>\r",
+							"            <td>{{surName}}</td>\r",
+							"            <td>{{email}}</td>\r",
+							"            <td>{{phone}}</td>\r",
+							"            <td>{{accType}}</td>\r",
+							"            <td>{{bankAccNum}}</td>\r",
+							"        </tr>\r",
+							"    {{/each}}\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()}\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/instapay",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"instapay"
+					]
+				},
+				"description": "This endpoint makes an HTTP GET request to retrieve instapay information. The response is in JSON format with a status code of 200. The response body includes an array of objects, each representing a user's information such as username, password, name, surname, email, phone, account type, and bank account number."
+			},
+			"response": []
+		},
+		{
+			"name": "get profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>Field</th>\r",
+							"        <th>Value</th>\r",
+							"    </tr>\r",
+							"    \r",
+							"    <tr>\r",
+							"        <td>Username</td>\r",
+							"        <td>{{response.userName}}</td>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>Password</td>\r",
+							"        <td>{{response.password}}</td>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>Name</td>\r",
+							"        <td>{{response.name}}</td>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>Surname</td>\r",
+							"        <td>{{response.surName}}</td>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>Email</td>\r",
+							"        <td>{{response.email}}</td>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>Phone</td>\r",
+							"        <td>{{response.phone}}</td>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>Account Type</td>\r",
+							"        <td>{{response.accType}}</td>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>Bank Account Number</td>\r",
+							"        <td>{{response.bankAccNum}}</td>\r",
+							"    </tr>\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"  return { response: pm.response.json() }\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/instapay/3bde1r7man",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"instapay",
+						"3bde1r7man"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
